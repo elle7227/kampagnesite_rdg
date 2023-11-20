@@ -1,0 +1,87 @@
+
+/* Add this to your stylesheet */
+.recipes_container {
+  display: flex;
+}
+
+.menu_container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 2;
+  width: 200px;
+}
+
+.content_container {
+  flex-grow: 1;
+  margin-left: -80px;
+}
+
+.content_container.open {
+  margin-left: 200px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 16px;
+}
+
+.holder {
+  width: 300px;
+}
+
+.recipe_card {
+  width: 400px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+.recipe_card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+ 
+
+
+/* Filtrerings kanpper */
+.filter_buttons {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  margin-inline-start: 100px;
+  margin-block-start: 3rem;
+  z-index: 1;
+}
+.filter_buttons p {
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 5px; /* Add padding to create space for the line */
+}
+
+/*MODAL*/
+      .modal {
+        position: fixed;
+        top: 15%;
+        left: 15%;
+        width: 50rem;
+        height: 30rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      } 
+      .modal_img img {
+        width: 50rem;
+        height: 30rem;
+        object-fit: cover; /* This property ensures the image covers the entire space */
+      }
+      .closeButton {
+        position: absolute;
+        top: 12px;
+        right: 0;
+      }
+

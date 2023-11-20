@@ -1,0 +1,50 @@
+/* NAVIGATION */
+.logo {
+    font-family: var(--heading);
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: var(--p);
+  }
+  .navMenu {
+    background-color: white;
+    box-shadow: none;
+  }
+  .navStyleBtn1 {
+    padding: 50px;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    font-size: 2rem;
+    font-family: var(--paragraph);
+    text-decoration: none;
+    color: black;
+  }
+  .navStyleBtn2 {
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    font-size: 2rem;
+    font-family: var(--paragraph);
+    text-decoration: none;
+    color: black;
+  }
+  .navStyleBtn1:hover,
+  .navStyleBtn2:hover {
+    font-weight: bold;
+  }
+  
+  .navContainer {
+    position: sticky;
+    display: flex;
+    z-index: 100;
+    justify-content: space-between;
+    padding-block: 2rem;
+  }
+  .flexBox {
+    display: flex;
+    gap: 1rem;
+  }
+  

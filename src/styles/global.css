@@ -1,4 +1,17 @@
-.heading{
-    font-size: 6rem;
-    color: blue;
-}
+
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,600&display=swap');
+
+* {
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-block-start: 0px;
+  }
+
+  :root {
+    --H1: clamp(6rem, 0.7857rem + 7.3143vw, 2.7rem);
+    --H2: 4rem;
+    --H3: 2rem;
+    --primary-text-color: #3498db;
+    --secondary-text-color: #e74c3c;
+  }
+
