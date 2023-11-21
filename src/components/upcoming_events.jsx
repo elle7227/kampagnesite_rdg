@@ -18,9 +18,6 @@ export function Upcoming_events(){
             <img className={styles.upcoming_event_img}
                 src="/event_billeder/apple_pie.jpg"
                 alt="upcoming_event_1"
-                //onMouseOver={() => handleMouseOver(3)}
-                //onMouseOut={handleMouseOut}
-                //onClick={() => handleTentClick("Telt3")}
             />
              <p>her indsætter vi en tekst</p>
              <button>link pop up</button>
@@ -31,9 +28,6 @@ export function Upcoming_events(){
           <img className={styles.upcoming_event_img}
                 src="/event_billeder/apple_pie.jpg"
                 alt="upcoming_event_1"
-                //onMouseOver={() => handleMouseOver(3)}
-                //onMouseOut={handleMouseOut}
-                //onClick={() => handleTentClick("Telt3")}
             />
              <p>her indsætter vi en tekst</p>
              <button>link pop up</button>
@@ -43,9 +37,6 @@ export function Upcoming_events(){
             <img className={styles.upcoming_event_img}
                 src="/event_billeder/apple_pie.jpg"
                 alt="upcoming_event_1"
-                //onMouseOver={() => handleMouseOver(3)}
-                //onMouseOut={handleMouseOut}
-                //onClick={() => handleTentClick("Telt3")}
             />
           <p>her indsætter vi en tekst</p>
           <button>link pop up</button>

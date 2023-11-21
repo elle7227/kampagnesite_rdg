@@ -4,10 +4,10 @@
 }
 
 .events_container{
-  overflow-x: auto; /* Hide horizontal overflow */
+  overflow-x: auto; 
 }
 
-/* Menu container styles */
+/* MENU STYLING */
 .menu_container {
   position: sticky;
   top: 0;
@@ -17,18 +17,19 @@
   
 }
 
-/* Main content container */
+/* Main content flytter ikke når menu åbner og lukker ved at justerer margin left */
 .main_content {
-  flex: 15; /* Take up the remaining space */
-  overflow-y: auto; /* Allow vertical scroll for main content */
+  flex: 15;
+  overflow-y: auto;
+  margin-left: -120px;
 }
-
-
 .main_content.open {
-  margin-left: 200px;
+  margin-left: 200px; 
 }
 
-/* Heading styles */
+
+
+/* H1 OVERSKRIFT */
 .heading1_landing {
   text-align: center;
   font-size: var(--H1);
@@ -36,25 +37,23 @@
   margin-top: 5rem;
 }
 
-/* Galleri upcoming events */
-
+/* scroll galleri upcoming events */
 .upcoming_event_section{
   display: flex; /* Display upcoming events in a row */
   overflow-x: auto; /* Allow horizontal scroll if needed */
   width: 140%;
+  
 }
-
 .upcoming_event_card {
-  margin-right: 20px;
+  margin-right: 15px;
+  margin-left: 30px;
   position: relative;
 }
-
 .upcoming_event_img {
   width: 600px;
   position: relative;
   margin-top: 10%;
 }
-
 .upcoming_event_card h3 {
   font-size: 4rem;
   position: absolute;
@@ -66,84 +65,69 @@
 
 
 
-/*EVENTS_ GALLERI GRID*/
-
-.row_1_col_1, .row_1_col_2, .row_1_col_3{
-  margin-inline:50px;
+/*PREVIOUS EVENTS_ GALLERI SECTION*/
+.galleri_overskrift{
+  margin-top: 50px;
+  font-size: 5rem;
+  margin-left: 30px;
 }
+
+.row_container{
+  margin-inline: 25px;
+}
+
+.row_1{
+  display: block;
+  margin-top: 0;
+  padding-block-start: 10px;
+  padding-bottom: 85px;
+}
+.row_2, .row_3, .row_4 {
+  display: block;
+  margin-top: 10%;
+  padding-block: 85px;
+}
+
+
+.row_container img {
+  width: 240px;
+  margin: 10px;
+  vertical-align: top;
+  transition: transform 0.3s ease-in-out, z-index 0.3s ease-in-out;
+}
+.row_container img:hover {
+  transform: scale(1.5);
+  z-index: 1;
+}
+
+.row_container video {
+  width: 240px;
+}
+
+/*h3 overksift - på hvert event*/
+.galleri_holder h3{
+  margin-left: 60px;
+}
+
 
 /*RÆKKE 1*/
-.row_1 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  overflow-x: hidden;
-}
-
-.row_1_inlineImages {
-  display: flex;
-}
-.row_1_inlineImages img {
-  margin-right: 10px; /* Adjust as needed for spacing between the first two images */
-}
-.row_1_col_1 img {
-  width: 200px;
-  margin-bottom: 10px; /* Adjust as needed for spacing between the images in the first column */
-}
-
-
-.row_1_col_2 img{
-  width: 300px;
-}
-.row_1_col_3 img{
-  width: 300px;
-}
-
-
-.row_1_col_3_inlineImages{
-  display: flex;
-}
-.row_1_col_3_inlineImages img{
-  width: 90px;
-  margin-inline: 6px;
-}
-
-
+.row_1{
+  background-color: rgb(255, 255, 255);
+  }
 /*RÆKKE 2*/
 .row_2{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  overflow-x: hidden;
-  margin-top: 10%;
+background-color: black;
 }
-
-
 
 /*RÆKKE 3*/
 .row_3{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  overflow-x: hidden;
-  margin-top: 10%;
-}
+  background-color: rgb(152, 141, 141);
+  }
 
-.row_3_col_1, .row_3_col_2, .row_3_col_3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+/*RÆKKE 4*/
+.row_4{
+  background-color: rgb(249, 248, 248);
+  }
 
-.row_3 img {
-width: 400px;
-}
-
-
-
-.row_3_col_3_inlineImages{
-  display: flex;
-}
-.row_3_col_3_inlineImages img{
-  width: 200px;
-  margin-inline: 10px;
-}
 
 

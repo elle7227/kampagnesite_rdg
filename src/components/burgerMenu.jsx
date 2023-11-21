@@ -29,7 +29,7 @@ export default function BurgerMenu() {
         <ul className={`${styles.menu_list} ${menuOpen ? styles.open : ''}`}>
         <li><a href="/">EVENTS</a></li>
           <li><a href="/recipes">OPSKRIFTER</a></li>
-          <li><a href="#">INSPIRATION</a></li>
+          <li><a href="/inspiration">INSPIRATION</a></li>
         </ul>
       </div>
     </div>
