@@ -89,19 +89,23 @@
 }
 
 
-.row_container img {
+.row_container img,
+.row_container video {
   width: 240px;
   margin: 10px;
   vertical-align: top;
   transition: transform 0.3s ease-in-out, z-index 0.3s ease-in-out;
+  position: relative; /* Add position property */
 }
-.row_container img:hover {
+
+.row_container img:hover,
+.row_container video:hover {
   transform: scale(1.5);
   z-index: 1;
 }
 
-.row_container video {
-  width: 240px;
+.row_container video:hover {
+  z-index: 100; /* Set a higher z-index for the video */
 }
 
 /*h3 overksift - på hvert event*/

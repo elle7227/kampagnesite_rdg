@@ -27,10 +27,19 @@ export default function BurgerMenu() {
           
         )}
         <ul className={`${styles.menu_list} ${menuOpen ? styles.open : ''}`}>
-        <li><a href="/">EVENTS</a></li>
-          <li><a href="/recipes">OPSKRIFTER</a></li>
-          <li><a href="/inspiration">INSPIRATION</a></li>
+        <li><a href="https://www.rosendahl.com/da/dk/kay-bojesen">KAY BOJESEN</a></li>
+          <li><a href="https://www.rosendahl.com/da/dk/kahler">KÄHLER</a></li>
+          <li><a href="https://www.rosendahl.com/da/dk/rosendahl">ROSENDAHL</a></li>
+          <li><a href="https://www.rosendahl.com/da/dk/holmegaard">HOLMEGAARD</a></li>
+          <li><a href="https://www.rosendahl.com/da/dk/lyngby-porcelæn">LYNGBY PORCELÆN</a></li>
+          <li><a href="https://www.rosendahl.com/da/dk/bjoern-wiinblad">BJØRN WIINBLAD</a></li>
+          <li><a href="https://www.rosendahl.com/da/dk/juna">JUNA</a></li>
+          <li><a href="https://www.rosendahl.com/da/dk/arne-jacobsen-clocks">ARNE JACOBSEN CLOCKS</a></li>
+          <button className={styles.all_button} onClick={() => window.location.href = 'https://www.rosendahl.com/da/dk'}>
+       ALL BRANDS
+      </button>
         </ul>
+       
       </div>
     </div>
   );
