@@ -7,7 +7,6 @@ export default function MenuBar() {
         <li><a href="/">EVENTS</a></li>
         <li><a href="/recipes">OPSKRIFTER</a></li>
         <li><a href="/inspiration">INSPIRATION</a></li>
-        <li><a href="/bookingForm">Reservations</a></li>
       </ul>
     )
   }

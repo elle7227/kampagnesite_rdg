@@ -4,6 +4,7 @@ import { Upcoming_events } from "@/components/upcoming_events";
 import Event_galleri from "@/components/events_galleri";
 import BurgerMenu from "@/components/burgerMenu";
 import MenuBar from "@/components/menuBar";
+import Footer from "@/components/footer";
 
 
 
@@ -15,21 +16,20 @@ export default function Landing_page(){
           <BurgerMenu />
         </section>
         <section className={styles.main_content}>
-        <MenuBar></MenuBar>
-        <section className={styles.heading1_landing}>
+          <section className={styles.menuBar_container}>
+            <MenuBar></MenuBar>
+          </section>
+          <section className={styles.heading1_landing}>
             <h1>OVERSKRIFT</h1>
           </section>
-
           <section className={styles.events_container}>
-          <Upcoming_events />
-          </section>
-
-          <section className={styles.events_container}>
-          <Event_galleri/>
-          </section>
+            <Upcoming_events />
          
+          </section>
+          <Event_galleri/>
         </section>
       </div>
+      <Footer></Footer>
     </>
   )
 }

@@ -1,6 +1,17 @@
-import { InstagramEmbed } from 'react-social-media-embed';
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+import Footer from "@/components/footer";
+import Inspiration_fetch from '@/components/inspiration_fetch';
+
+
+export default function Inspiration(){
+  return(
+    <>
+    <Inspiration_fetch/>
+    <Footer/>
+    </>
+  )
+
+}
 
 
 /*export default function InstagramFeed () {

@@ -27,14 +27,14 @@ export default function BurgerMenu() {
           
         )}
         <ul className={`${styles.menu_list} ${menuOpen ? styles.open : ''}`}>
-        <li><a href="https://www.rosendahl.com/da/dk/kay-bojesen">KAY BOJESEN</a></li>
-          <li><a href="https://www.rosendahl.com/da/dk/kahler">KÄHLER</a></li>
-          <li><a href="https://www.rosendahl.com/da/dk/rosendahl">ROSENDAHL</a></li>
-          <li><a href="https://www.rosendahl.com/da/dk/holmegaard">HOLMEGAARD</a></li>
-          <li><a href="https://www.rosendahl.com/da/dk/lyngby-porcelæn">LYNGBY PORCELÆN</a></li>
-          <li><a href="https://www.rosendahl.com/da/dk/bjoern-wiinblad">BJØRN WIINBLAD</a></li>
-          <li><a href="https://www.rosendahl.com/da/dk/juna">JUNA</a></li>
-          <li><a href="https://www.rosendahl.com/da/dk/arne-jacobsen-clocks">ARNE JACOBSEN CLOCKS</a></li>
+        <li><a href="https://www.rosendahl.com/da/dk/kay-bojesen"><span>K</span>AY BOJESEN</a></li>
+          <li><a href="https://www.rosendahl.com/da/dk/kahler"><span>K</span>ÄHLER</a></li>
+          <li><a href="https://www.rosendahl.com/da/dk/rosendahl"><span>R</span>OSENDAHL</a></li>
+          <li><a href="https://www.rosendahl.com/da/dk/holmegaard"><span>H</span>OLMEGAARD</a></li>
+          <li><a href="https://www.rosendahl.com/da/dk/lyngby-porcelæn"><span>L</span>YNGBY PORCELÆN</a></li>
+          <li><a href="https://www.rosendahl.com/da/dk/bjoern-wiinblad"><span>B</span>JØRN WIINBLAD</a></li>
+          <li><a href="https://www.rosendahl.com/da/dk/juna"><span>J</span>UNA</a></li>
+          <li><a href="https://www.rosendahl.com/da/dk/arne-jacobsen-clocks"><span>A</span>RNE JACOBSEN CLOCKS</a></li>
           <button className={styles.all_button} onClick={() => window.location.href = 'https://www.rosendahl.com/da/dk'}>
        ALL BRANDS
       </button>

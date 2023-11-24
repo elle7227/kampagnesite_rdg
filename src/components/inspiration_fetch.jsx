@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import styles from "@/styles/opskrifter.module.css";
+import styles from "@/styles/inspiration.module.css";
 import Recipe_modal from './recipe_modal';
 import BurgerMenu from "@/components/burgerMenu";
 import MenuBar from './menuBar';
 
-export default function Opskrifter_fetch (){
+export default function Inspiration_fetch (){
   const [artists, setArtist] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedArtist, setSelectedArtist] = useState(null);
@@ -53,8 +53,9 @@ export default function Opskrifter_fetch (){
         <article className={styles.menu_container}>
           <BurgerMenu />
         </article>
+
         <article className={styles.content_container}>
-        <MenuBar></MenuBar>
+            <MenuBar></MenuBar>
           <div className={styles.filter_buttons}>
             <p onClick={handleShowAll}>All</p>
             <p onClick={() => handleFilterClick("dinner")}>Aftensmad</p>
@@ -77,6 +78,3 @@ export default function Opskrifter_fetch (){
           {isModalOpen && <Recipe_modal artist={selectedArtist} onClose={handleCloseModal} />}          
     </>
   );}
-
-
- 

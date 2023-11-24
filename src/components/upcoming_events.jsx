@@ -2,13 +2,21 @@
 import React from 'react';
 import styles from "@/styles/Landing.module.css";
 import { useState } from 'react';
+import BookingForm from '@/components/bookingForm';
+ 
 
 
 export function Upcoming_events(){
   const [clickedButton, setClickedButton] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   function handleButtonClick (buttonName){
     setClickedButton(buttonName);
+    setShowModal(true);
+  }
+
+  function handleCloseModal() {
+    setShowModal(false);
   }
 
   return (
@@ -28,12 +36,12 @@ export function Upcoming_events(){
             />
              <p>her indsætter vi en tekst</p>   
     
-  <button
-    className={styles.button1}
-    onClick={() => handleButtonClick('button1')}
-  >
-    link pop up
-  </button>
+             <button
+            className={styles.button1}
+            onClick={() => handleButtonClick('button1')}
+          >
+            link pop up
+          </button>
 
 
         </div>
@@ -61,12 +69,16 @@ export function Upcoming_events(){
             />
           <p>her indsætter vi en tekst</p>
           <button
-            className={styles.button2}
-            onClick={() => handleButtonClick('button2')}
+            className={styles.button1}
+            onClick={() => handleButtonClick('button1')}
           >
             link pop up
           </button>
         </div>
+
+        {showModal && (
+  <BookingForm handleClose={handleCloseModal} clickedButton={clickedButton} />
+)}
     </article>
 
     </>

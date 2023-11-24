@@ -1,80 +1,225 @@
-/* Container for the entire page */
+
+/*Container til alt indhold*/
 .content_container {
   display: flex;
 }
 
-.events_container{
-  overflow-x: auto; 
-}
-
-/* MENU STYLING */
+/* menu-container*/
 .menu_container {
   position: sticky;
   top: 0;
-  z-index: 100;
   height: 100vh;
-  width: 200px;
-  
+  width: 20px;
+  z-index: 100;
 }
 
-/* Main content flytter ikke når menu åbner og lukker ved at justerer margin left */
-.main_content {
-  flex: 15;
-  overflow-y: auto;
-  margin-left: -120px;
+.menuBar_container{
+  margin-left: 4%;
 }
-.main_content.open {
-  margin-left: 200px; 
-}
-
-
 
 /* H1 OVERSKRIFT */
 .heading1_landing {
   text-align: center;
-  font-size: var(--H1);
+  font-size: 2rem;
   color: var(--primary-text-color);
-  margin-top: 5rem;
+  margin-top: 1rem;
 }
 
-/* scroll galleri upcoming events */
+ 
+/* scroll section upcoming events */
 .upcoming_event_section{
-  display: flex; /* Display upcoming events in a row */
-  overflow-x: auto; /* Allow horizontal scroll if needed */
-  width: 140%;
-  
+  display: block; /* Display upcoming events in a row */
+  width: 100%;
 }
 .upcoming_event_card {
   margin-right: 15px;
-  margin-left: 30px;
+  margin-left: 15%;
   position: relative;
 }
 .upcoming_event_img {
-  width: 600px;
+  width: 400px;
   position: relative;
   margin-top: 10%;
 }
 .upcoming_event_card h3 {
-  font-size: 4rem;
+  font-size: 3rem;
   position: absolute;
   top: 3%;
   left: 0;
   z-index: 1;
 }
+
  
 
+/*MODAL BOOKING-FORM*/
+.modal {
+  background-color: rgb(246, 243, 243);
+  border: solid 4px black;
+  position: fixed;
+  top: 15%;
+  left: 18%;
+  width: 60rem;
+  height: 35rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.formGroup {
+  position: relative;
+  margin-bottom: 16px;
+}
+.formGroup input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.formGroup label {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  color: #777;
+  pointer-events: none;
+  transition: 0.3s ease-out;
+}
+.modal h2 {
+  color: #4a4949;
+  font-size: 4rem;
+  position: absolute; /* Add this line */
+  top: 10px; /* Adjust the top position as needed */
+  left: 20%;
+  margin-bottom: 20px;
+}
+.modal button {
+  background-color: #f2eeee;
+  color: #000000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.modal_closeButton {
+  position: absolute;
+  top: 20px;
+  right: 14px;
+}
+.modal_backButton{
+  position: absolute;
+  top: 20px;
+  left: 14px;
+}
 
+.galleri_overskrift{
+  margin-top: 10px;
+  font-size: 2rem;
+  margin-left: 14%;
+}
 
 /*PREVIOUS EVENTS_ GALLERI SECTION*/
-.galleri_overskrift{
-  margin-top: 50px;
-  font-size: 5rem;
-  margin-left: 30px;
+.row_container img,
+.row_container video {
+  width: 300px;
+  margin: 10px;
+  vertical-align: top;
 }
 
 .row_container{
-  margin-inline: 25px;
+  text-align: center;
 }
+
+.row_1{
+  display: block;
+  margin-top: 0;
+  padding-block-start: 10px;
+}
+.row_2, .row_3, .row_4 {
+  display: block;
+  margin-top: 20px;
+}
+
+/*RÆKKE 1*/
+.row_1{
+  background-color: rgb(255, 255, 255);
+  }
+/*RÆKKE 2*/
+.row_2{
+background-color: black;
+}
+
+/*RÆKKE 3*/
+.row_3{
+  background-color: rgb(152, 141, 141);
+  }
+
+/*RÆKKE 4*/
+.row_4{
+  background-color: rgb(249, 248, 248);
+  }
+
+
+
+
+@media (min-width: 750px) {
+  .menuBar_container{
+    margin-left: 7%;
+  }
+ 
+  .main_content {
+    flex: 15;
+    overflow-y: auto;
+  }
+  /* H1 OVERSKRIFT */
+  .heading1_landing {
+    text-align: center;
+    font-size: var(--H1);
+    color: var(--primary-text-color);
+    margin-top: 5rem;
+  }
+
+  /* container med up-coming og previous galleri  */
+  .events_container{
+    overflow-x: auto; 
+    margin-left: 4%;
+  }
+
+  .row_container{
+    text-align: center;
+    margin-left: 5%;
+  }
+
+  .upcoming_event_section{
+    display: flex; /* Display upcoming events in a row */
+    overflow-x: auto; /* Allow horizontal scroll if needed */
+    width: 140%;
+  }
+
+  .upcoming_event_card {
+    margin-right: 15px;
+    margin-left: 30px;
+    position: relative;
+  }
+  .upcoming_event_img {
+    width: 600px;
+    position: relative;
+    margin-top: 10%;
+  }
+  .upcoming_event_card h3 {
+    font-size: 4rem;
+    position: absolute;
+    top: 3%;
+    left: 0;
+    z-index: 1;
+  }
+
+
+
+  .galleri_overskrift{
+    margin-top: 50px;
+    font-size: 5rem;
+    margin-left: 3px;
+  }
+
 
 .row_1{
   display: block;
@@ -82,6 +227,7 @@
   padding-block-start: 10px;
   padding-bottom: 85px;
 }
+
 .row_2, .row_3, .row_4 {
   display: block;
   margin-top: 10%;
@@ -112,26 +258,5 @@
 .galleri_holder h3{
   margin-left: 60px;
 }
-
-
-/*RÆKKE 1*/
-.row_1{
-  background-color: rgb(255, 255, 255);
-  }
-/*RÆKKE 2*/
-.row_2{
-background-color: black;
 }
-
-/*RÆKKE 3*/
-.row_3{
-  background-color: rgb(152, 141, 141);
-  }
-
-/*RÆKKE 4*/
-.row_4{
-  background-color: rgb(249, 248, 248);
-  }
-
-
 

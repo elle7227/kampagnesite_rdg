@@ -1,0 +1,38 @@
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: left;
+    margin-top: 30px;
+    
+  }
+  
+  .footer h2 {
+    margin-left: 5%;
+    margin-bottom: 20px;
+  }
+  
+.columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-inline: 5%;
+  }
+  
+.column, .column_4 {
+    flex: 1;
+    place-content: center;
+    text-align: left;
+  }
+
+  .column_4{
+    padding-left: 15px;
+    border-left: 1px solid white;
+  }
+
+  .line{
+    margin: 5%;
+  }
+  .line p{
+    margin-top: 20px;
+  }
