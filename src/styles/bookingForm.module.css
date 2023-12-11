@@ -1,0 +1,58 @@
+/*MODAL BOOKING-FORM*/
+.modal {
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 15%;
+    left: 18%;
+    width: 60rem;
+    height: 35rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .formGroup {
+    position: relative;
+    margin-bottom: 16px;
+  }
+  .formGroup input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .formGroup label {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    color: #777;
+    pointer-events: none;
+    transition: 0.3s ease-out;
+  }
+  .modal h2 {
+    color: #4a4949;
+    font-size: 4rem;
+    position: absolute; /* Add this line */
+    top: 10px; /* Adjust the top position as needed */
+    left: 20%;
+    margin-bottom: 20px;
+  }
+  .modal button {
+    background-color: #f2eeee;
+    color: #000000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .modal_closeButton {
+    position: absolute;
+    top: 20px;
+    right: 14px;
+  }
+  .modal_backButton{
+    position: absolute;
+    top: 20px;
+    left: 14px;
+  }
+  

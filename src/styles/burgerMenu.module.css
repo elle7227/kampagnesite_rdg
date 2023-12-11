@@ -34,9 +34,10 @@
   .vertical_text {
     transform: rotate(-90deg);
     margin-top: 250px;
-    font-size: 2rem;
-    margin-top: 280px;
-    margin-inline: -45px;
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    margin-top: 355px;
+    margin-inline: -78px;
  }
 
 
@@ -105,7 +106,7 @@
 /* MENU BAR*/
 .menu {
   list-style-type: none;
-  margin-right: 8%;
+  margin-right: 3%;
   margin-top: 50px;
   padding: 0;
   overflow: hidden;
@@ -119,9 +120,15 @@
   color: rgb(0, 0, 0);
   text-align: center;
   padding-right: 16px;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
   text-decoration: none;
 }
+.menu li a:hover {
+text-decoration: underline;
+}
+
+
+
 
 /*firkantet knap i bunden*/
 .all_button {

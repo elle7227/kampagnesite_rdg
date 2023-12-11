@@ -20,7 +20,7 @@ export default function Landing_page(){
             <MenuBar></MenuBar>
           </section>
           <section className={styles.heading1_landing}>
-            <h1>OVERSKRIFT</h1>
+            <h1>Dine With ROSENDAHL</h1>
           </section>
           <section className={styles.events_container}>
             <Upcoming_events />

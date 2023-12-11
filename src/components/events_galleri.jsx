@@ -41,55 +41,67 @@ export default function Event_galleri() {
 
     return(
         <>
-        <h2 className={styles.galleri_overskrift}>TIDLIGERE EVENTS</h2>
-        <section className={styles.galleri_holder}>
+        <h2 className={styles.galleri_overskrift}>Tidligere events</h2>
 
-        <article className={styles.row_1}>
-                <h3>ROSENDAHL X FRIHEDEN</h3>
-                <div className= {styles.row_container}>
-                    <img className={styles.upcoming_event_img} src="/web_1/e1_dinner.webp"/>       
-                    <video ref={(ref) => videoRefs.current.push(ref)} className={styles.video} autoPlay muted>
-                            <source src="/web_1/e1_video1.mp4" type="video/mp4" />
-                    </video>
-                    <img className={styles.upcoming_event_img} src="/web_1/e1_friends.webp"/> 
-                    <img className={styles.upcoming_event_img} src="/web_1/e1_pizza.webp"/> 
-                    <img className={styles.upcoming_event_img} src="/web_1/e1_friends2.webp"/>  
-                    
-                </div>    
+        <section className={styles.galleri_holder}>
+            <article className={styles.row_1}>
+                <div className={styles.row_1_col_1}>
+                    <img className={styles.event_img} src="tidligere_events/bar_pasta1.jpg"/>  
+                    <p>indsæt tekst omkring hvilket event, sted og dato</p>     
+                </div>
+
+                <div className={styles.row_1_col_2}>
+                <img className={styles.event_img} src="tidligere_events/bar_pasta2.jpg"/>  
+                    <p>indsæt tekst omkring hvilket event, sted og dato</p>
+                </div>
+
             </article>
-           
+
             <article className={styles.row_2}>
-                <h3>ROSENDAHL X FRIHEDEN</h3>
-                <div className= {styles.row_container}>
-                    <video ref={(ref) => videoRefs.current.push(ref)} className={styles.video} autoPlay muted><source src="/web_2/video1.mp4" type="video/mp4" /></video>
-                    <img className={styles.upcoming_event_img} src="/web_2/food1.webp" /> 
-                    <img className={styles.upcoming_event_img} src="/web_2/food2.webp" /> 
-                    <video  ref={(ref) => videoRefs.current.push(ref)} className={styles.video} autoPlay muted><source src="/web_2/video2.mp4" type="video/mp4" /></video>
-                    <img className={styles.upcoming_event_img} src="/web_2/food2.webp" />  
-                </div>    
+                <div className={styles.row_2_col_1}>
+                <img className={styles.event_img} src="tidligere_events/osteria1.jpg"/>   
+                    <h4>navn på event</h4>
+                    <p>indsæt tekst omkring hvilket event, sted og dato</p>    
+                </div>
+
+                <div className={styles.row_2_col_2}>
+                <video ref={(ref) => videoRefs.current.push(ref)} className={styles.video} autoPlay muted>
+                        <source src="/tidligere_events/piger.mp4" type="video/mp4" />
+                    </video>
+                    <p>indsæt tekst omkring hvilket event, sted og dato</p>
+                </div> 
+
             </article>
 
             <article className={styles.row_3}>
-                <h3>ROSENDAHL X FRIHEDEN</h3>
-                <div className= {styles.row_container}>
-                    <img className={styles.upcoming_event_img} src="/web_3/tjener.webp" />        
-                    <img className={styles.upcoming_event_img} src="/web_3/bord1.webp" />
-                    <img className={styles.upcoming_event_img} src="/web_3/piger.webp" />        
-                    <video  ref={(ref) => videoRefs.current.push(ref)} className={styles.video} autoPlay muted><source src="/web_3/e1_video2.mp4" type="video/mp4" /></video>
-                    <img className={styles.upcoming_event_img} src="/web_3/bord2.webp" />      
-                </div>    
+                <div className={styles.row_3_col_1}>
+                <img className={styles.event_img} src="tidligere_events/mangia3.jpg"/>  
+                    <p>indsæt tekst omkring hvilket event, sted og dato</p>     
+                </div>
+                
+                <div className={styles.row_3_col_2}>
+                    <img className={styles.event_img} src="tidligere_events/mangia2.jpg"/>  
+                    <p>indsæt tekst omkring hvilket event, sted og dato</p>
+                </div>
+
+                <div className={styles.row_3_col_3}>
+                    <img className={styles.event_img} src="tidligere_events/mangia.jpg"/> 
+                    <p>indsæt tekst omkring hvilket event, sted og dato</p>
+                </div> 
+                
             </article>
 
-             
             <article className={styles.row_4}>
-                <h3>ROSENDAHL X FRIHEDEN</h3>
-                <div className= {styles.row_container}>
-                    <img className={styles.upcoming_event_img} src="/web_4/piger.webp" />      
-                    <video  ref={(ref) => videoRefs.current.push(ref)} className={styles.video} autoPlay muted><source src="/web_4/video1.mp4" type="video/mp4" /></video>
-                    <img className={styles.upcoming_event_img} src="/web_4/drink.webp" />     
-                    <img className={styles.upcoming_event_img} src="/web_4/mad.webp" />     
-                    <video  ref={(ref) => videoRefs.current.push(ref)} className={styles.video} autoPlay muted><source src="/web_4/video2.mp4" type="video/mp4" /></video>
-                </div>    
+                <div className={styles.row_4_col_1}>
+                    <img className={styles.event_img} src="tidligere_events/habibi.jpg"/> 
+                    <p>indsæt tekst omkring hvilket event, sted og dato</p>
+                </div>
+                <div className={styles.row_4_col_2}>
+                    <video ref={(ref) => videoRefs.current.push(ref)} className={styles.video} autoPlay muted>
+                        <source src="/tidligere_events/habibi.mp4" type="video/mp4" />
+                    </video>
+                    <p>indsæt tekst omkring hvilket event, sted og dato</p>
+                </div>
             </article>
         </section>
         </>

@@ -5,16 +5,16 @@ import BurgerMenu from "@/components/burgerMenu";
 import MenuBar from './menuBar';
 
 export default function Opskrifter_fetch (){
-  const [artists, setArtist] = useState([]);
+  const [opskrift, setOpskrift] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedArtist, setSelectedArtist] = useState(null);
+  const [selectedOpskrift, setSelectedOpskrift] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
 
 
 //fetche data fra api når component er renderet
   useEffect(() => {
-    async function fetchArtister() {
-        const response = await fetch("https://ggufspwjbdpzmyqymijq.supabase.co/rest/v1/wines", {
+    async function fetchOpskrifter() {
+        const response = await fetch("https://ggufspwjbdpzmyqymijq.supabase.co/rest/v1/opskrifter", {
           method: "get",
           headers: {
             apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdndWZzcHdqYmRwem15cXltaWpxIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzk5MTkzNjcsImV4cCI6MTk5NTQ5NTM2N30.OszSJm-lZ8YMuK32u4ZmLBGGhl5BzkB8ieK_XUEVY04",
@@ -22,14 +22,14 @@ export default function Opskrifter_fetch (){
         });
         // response --> json, som parses og returnere promise der resolver js objekt.
         const data = await response.json();
-        setArtist(data);
+        setOpskrift(data);
     }
-    fetchArtister();
+    fetchOpskrifter();
   }, []);
 
-  function handleHolderClick(artist) {
-    console.log("Holder clicked", artist);
-    setSelectedArtist(artist);
+  function handleHolderClick(opskrift) {
+    console.log("Holder clicked", opskrift);
+    setSelectedOpskrift(opskrift);
     setIsModalOpen(true);
   }
   function handleCloseModal() {
@@ -43,9 +43,9 @@ export default function Opskrifter_fetch (){
     setSelectedCategory(null);
   }
   
-  const filteredArtists = selectedCategory
-    ? artists.filter((artist) => artist.category === selectedCategory)
-    : artists;
+  const filteredOpskrift = selectedCategory
+    ? opskrift.filter((opskrift) => opskrift.category === selectedCategory)
+    : opskrift;
   
   return (
     <>
@@ -56,17 +56,17 @@ export default function Opskrifter_fetch (){
         <article className={styles.content_container}>
         <MenuBar></MenuBar>
           <div className={styles.filter_buttons}>
-            <p onClick={handleShowAll}>All</p>
-            <p onClick={() => handleFilterClick("dinner")}>Aftensmad</p>
-            <p onClick={() => handleFilterClick("breakfast")}>Morgenmad</p>
-            <p onClick={() => handleFilterClick("lunch")}>Frokost</p>
+            <a onClick={handleShowAll}>All</a>
+            <a onClick={() => handleFilterClick("dinner")}>Aftensmad</a>
+            <a onClick={() => handleFilterClick("dessert")}>Dessert</a>
+            <a onClick={() => handleFilterClick("drink")}>Drikke</a>
           </div>
 
           <section className={styles.grid}>
-            {filteredArtists.map((artist) => (
-            <div className={styles.holder} onClick={() => handleHolderClick(artist) }>
+            {filteredOpskrift.map((opskrift) => (
+            <div className={styles.holder} onClick={() => handleHolderClick(opskrift) }>
               <article className={styles.recipe_card}>
-                {artist.image && <img src={artist.image} alt={artist.name} />}
+                {opskrift.image && <img src={opskrift.image} alt={opskrift.name} />}
               </article>
             </div>
             ))}
@@ -74,7 +74,7 @@ export default function Opskrifter_fetch (){
         </article>
 
     </section>
-          {isModalOpen && <Recipe_modal artist={selectedArtist} onClose={handleCloseModal} />}          
+          {isModalOpen && <Recipe_modal opskrift={selectedOpskrift} onClose={handleCloseModal} />}          
     </>
   );}
 

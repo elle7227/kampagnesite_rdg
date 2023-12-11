@@ -22,11 +22,12 @@
   grid-template-columns: repeat(1fr);
   row-gap: 16px;
   place-content: center;
+  margin-left: 13%;
 }
 
 .recipe_card {
-  width: 300px;
-  height: 200px;
+  width: 340px;
+  height: 465px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,11 +45,11 @@
   display: flex;
   gap: 50px;
   align-items: center;
-  margin-inline-start: 100px;
-  margin-block-start: 3rem;
+  margin-inline-start: 20%;
+  margin-block: 2rem;
   z-index: 1;
 }
-.filter_buttons p {
+.filter_buttons a {
   cursor: pointer;
   position: relative;
   padding-bottom: 5px; /* Add padding to create space for the line */
@@ -56,24 +57,31 @@
 
 /*MODAL*/
       .modal {
+        background-color: rgb(237, 235, 235);
         position: fixed;
-        top: 15%;
-        left: 15%;
+        top: 10%;
+        left: 17%;
         width: 400px;
         height: auto;
-        display: flex;
+        display: block;
         justify-content: center;
         align-items: center;
+        padding: 13px;
       } 
       .modal_img img {
-        width: 400px;
+        width: 0px;
         height: auto;
         object-fit: cover; /* This property ensures the image covers the entire space */
       }
       .closeButton {
         position: absolute;
         top: 12px;
-        left: 350px;
+        left: 390px;
+      }
+
+      .recipe {
+        white-space: pre-line;
+        word-wrap: break-word; 
       }
 
   @media (min-width: 800px) {
@@ -81,14 +89,15 @@
           grid-template-columns: repeat(2, 1fr);
         }
         .recipe_card {
-          width: 400px;
-          height: 250px;
+          width: 380px;
+          height: 518px;
           display: flex;
           align-items: center;
           justify-content: center;
           border: 1px solid black;
         }
         .modal {
+          background-color: rgb(237, 235, 235);
           top: 15%;
           left: 16%;
           width: 700px;
@@ -97,6 +106,13 @@
           justify-content: center;
           align-items: center;
         } 
+
+        .modalColumn {
+          flex: 1; /* Each column takes up equal width */
+          padding-right: 2rem; /* Add padding between columns */
+          display: flex;
+          flex-direction: column;
+        }
         .modal_img img {
           width: 100%;
           height: auto;
@@ -112,7 +128,17 @@
   }
 
 
-@media  (min-width: 1300px) {
+@media  (min-width: 1100px) {
+
+  .filter_buttons {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    margin-inline-start: 35%;
+    margin-block: 2rem;
+    z-index: 1;
+  }
+
   .recipes_container {
     display: flex;
   }
@@ -138,15 +164,16 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     row-gap: 16px;
+    margin-inline: 5%;
   }
 
   .holder {
-    width: 300px;
+    width: 350px;
   }
 
   .recipe_card {
-    width: 400px;
-    height: 250px;
+    width: 350px;
+    height: 480px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -160,24 +187,38 @@
   }
  
   /*MODAL*/
-      .modal {
-        position: fixed;
-        top: 15%;
-        left: 20%;
-        width: 50rem;
-        height: 30rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      } 
-      .modal_img img {
-        width: 50rem;
-        height: 30rem;
-        object-fit: cover; /* This property ensures the image covers the entire space */
-      }
-      .closeButton {
-        position: absolute;
-        top: 12px;
-        left: 750px;
-      }
+  .modal {
+    background-color: rgb(237, 235, 235);
+    position: fixed;
+    top: 10%;
+    left: 17%;
+    width: 60rem; /* Adjusted width to accommodate two columns */
+    height: 39rem;
+    display: flex;
+  }
+  
+  .modalColumn {
+    flex: 1; /* Each column takes up equal width */
+    padding-right: 2rem; /* Add padding between columns */
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+  .modal_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+
+  .closeButton {
+    position: absolute;
+    top: 12px;
+    left: 920px;
+    width: 30px; /* Adjusted button width */
+    height: 30px; /* Adjusted button height */
+    font-size: 14px; /* Adjusted font size */
+    cursor: pointer;
+  }
   }

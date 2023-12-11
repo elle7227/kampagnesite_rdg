@@ -1,14 +1,31 @@
 
 import React from 'react';
 import styles from "@/styles/Landing.module.css";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import BookingForm from '@/components/bookingForm';
- 
+
 
 
 export function Upcoming_events(){
   const [clickedButton, setClickedButton] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [artists, setArtist] = useState([]);
+
+  useEffect(() => {
+    async function fetchArtister() {
+      const response = await fetch('https://xsspmvprmsitdckybuoy.supabase.co/rest/v1/events_forside', {
+          method: "get",
+          headers: {
+            apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inhzc3BtdnBybXNpdGRja3lidW95Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcwMDI0NDAwMywiZXhwIjoyMDE1ODIwMDAzfQ.geMCtASisK7KU6HnUOxum8GFwMw51Q-rs0NKgXx-mN8",
+          },
+        });
+        // response --> json, som parses og returnere promise der resolver js objekt.
+        const data = await response.json();
+        setArtist(data);
+        console.log("Fetched artists:", data.map(artist => artist.name));
+    }
+    fetchArtister();
+  }, []);
 
   function handleButtonClick (buttonName){
     setClickedButton(buttonName);
@@ -22,63 +39,28 @@ export function Upcoming_events(){
   return (
     <>
     <article>
-            <h2 className={styles.heading}>landing gallery</h2>
+            <h2 className={styles.heading}>Kommende events</h2>
         </article>
 
          
     <article className={styles.upcoming_event_section}>
 
-        <div className={styles.upcoming_event_card}>
-            <h3>NAVN PÅ EVENT</h3>
-            <img className={styles.upcoming_event_img}
-                src="/event_billeder/upcoming1.jpeg"
-                alt="upcoming_event_1"
-            />
-             <p>her indsætter vi en tekst</p>   
-    
-             <button
-            className={styles.button1}
-            onClick={() => handleButtonClick('button1')}
-          >
-            link pop up
-          </button>
-
-
-        </div>
-
-        <div className={styles.upcoming_event_card}>
-        <h3>NAVN PÅ EVENT</h3>
-          <img className={styles.upcoming_event_img}
-                src="/event_billeder/upcoming1.jpeg"
-                alt="upcoming_event_1"
-            />
-             <p>her indsætter vi en tekst</p>
-             <button
-            className={styles.button2}
-            onClick={() => handleButtonClick('button2')}
-          >
-            link pop up
-          </button>
-
-        </div>
-        <div className={styles.upcoming_event_card}>
-        <h3>NAVN PÅ EVENT</h3>
-            <img className={styles.upcoming_event_img}
-                 src="/event_billeder/upcoming1.jpeg"
-                alt="upcoming_event_1"
-            />
-          <p>her indsætter vi en tekst</p>
-          <button
-            className={styles.button1}
-            onClick={() => handleButtonClick('button1')}
-          >
-            link pop up
-          </button>
-        </div>
-
+    {artists.map((artist) => (
+    <div className={styles.upcoming_event_card} key={artist.id}>
+    <img src={artist.image} alt={artist.name} />
+    <h4>{artist.name}</h4>
+    <p>{artist.info}</p>
+    <button
+      className={styles.button2}
+      onClick={() => handleButtonClick('button2')}
+    >
+      link pop up
+    </button>
+  </div>
+  ))}
         {showModal && (
   <BookingForm handleClose={handleCloseModal} clickedButton={clickedButton} />
-)}
+    )}
     </article>
 
     </>

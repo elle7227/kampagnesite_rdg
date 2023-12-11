@@ -8,27 +8,27 @@ export default function Inspiration_fetch (){
   const [artists, setArtist] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedArtist, setSelectedArtist] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState(null);
 
 
 //fetche data fra api når component er renderet
   useEffect(() => {
     async function fetchArtister() {
-        const response = await fetch("https://ggufspwjbdpzmyqymijq.supabase.co/rest/v1/wines", {
+      const response = await fetch('https://xsspmvprmsitdckybuoy.supabase.co/rest/v1/inspiration', {
           method: "get",
           headers: {
-            apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdndWZzcHdqYmRwem15cXltaWpxIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzk5MTkzNjcsImV4cCI6MTk5NTQ5NTM2N30.OszSJm-lZ8YMuK32u4ZmLBGGhl5BzkB8ieK_XUEVY04",
+            apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inhzc3BtdnBybXNpdGRja3lidW95Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcwMDI0NDAwMywiZXhwIjoyMDE1ODIwMDAzfQ.geMCtASisK7KU6HnUOxum8GFwMw51Q-rs0NKgXx-mN8",
           },
         });
         // response --> json, som parses og returnere promise der resolver js objekt.
         const data = await response.json();
         setArtist(data);
+        console.log("Fetched artists:", data.map(artist => artist.name));
     }
     fetchArtister();
   }, []);
 
   function handleHolderClick(artist) {
-    console.log("Holder clicked", artist);
+    console.log("Fetched artists:", data);
     setSelectedArtist(artist);
     setIsModalOpen(true);
   }
@@ -36,17 +36,7 @@ export default function Inspiration_fetch (){
     setIsModalOpen(false);
   }
 
-  function handleFilterClick(category) {
-    setSelectedCategory(category);
-  }
-  function handleShowAll() {
-    setSelectedCategory(null);
-  }
-  
-  const filteredArtists = selectedCategory
-    ? artists.filter((artist) => artist.category === selectedCategory)
-    : artists;
-  
+
   return (
     <>
       <section className={styles.recipes_container}>
@@ -56,22 +46,46 @@ export default function Inspiration_fetch (){
 
         <article className={styles.content_container}>
             <MenuBar></MenuBar>
-          <div className={styles.filter_buttons}>
-            <p onClick={handleShowAll}>All</p>
-            <p onClick={() => handleFilterClick("dinner")}>Aftensmad</p>
-            <p onClick={() => handleFilterClick("breakfast")}>Morgenmad</p>
-            <p onClick={() => handleFilterClick("lunch")}>Frokost</p>
-          </div>
-
+            <h2>Style Stories</h2>
           <section className={styles.grid}>
-            {filteredArtists.map((artist) => (
-            <div className={styles.holder} onClick={() => handleHolderClick(artist) }>
-              <article className={styles.recipe_card}>
-                {artist.image && <img src={artist.image} alt={artist.name} />}
-              </article>
-            </div>
-            ))}
-          </section>
+  {artists.map((artist, index) => (
+    <div
+      className={styles.holder}
+      onClick={() => handleHolderClick(artist)}
+      key={index}
+    >
+      <article className={styles.recipe_card}>
+        <img src={artist.image} alt={artist.name} />
+        <div className={styles.buyOverlay}>
+          <a
+            className={styles.link1}
+            href={artist.product_1}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Buy now
+          </a>
+          <a
+            className={styles.link2}
+            href={artist.product_2}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Buy now
+          </a>
+          <a
+            className={styles.link}
+            href={artist.product_3}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Shop
+          </a>
+        </div>
+      </article>
+    </div>
+  ))}
+</section>
         </article>
 
     </section>

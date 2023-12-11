@@ -22,7 +22,7 @@ export default function BurgerMenu() {
             <div className={styles.bar}></div>
             <div className={styles.bar}></div>
           </div>
-          <p className={styles.vertical_text}>Rosendahl</p>
+          <p className={styles.vertical_text}>ROSENDAHL.COM</p>
           </>
           
         )}

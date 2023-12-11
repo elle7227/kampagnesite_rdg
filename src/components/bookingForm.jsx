@@ -35,34 +35,24 @@ export default function BookingForm({ handleClose, clickedButton }) {
 
   return (
     <div className={styles.modal}>
-           <button className={styles.modal_closeButton} onClick={handleClose}>close</button>
-
+      <section className={styles.grey_top}>
+        <button className={styles.modal_closeButton} onClick={handleClose}>close</button>
+      </section>
     {currentStep === 1 && (
-        <div>
-          <h2>Tickets for {clickedButton}</h2>
-          <div className={styles.formGroup}>
+        <div className={styles.form_container}>
+          <h2>Reservation til{clickedButton}</h2>
+          <div className={styles.formGroup_1}>
+            <p>Antal gæster</p>
             <input
               type="number"
               id="tickets"
               name="tickets"
-              min="1"
               placeholder="Antal gæster"
               value={formData.tickets}
               onChange={handleChange}
               required
             />
           </div>
-
-          <div className={styles.formGroup}>
-            <label htmlFor="eventDate"></label>
-            <input
-              type="date"
-              id="eventDate"
-              name="eventDate"
-              onChange={handleChange}
-              required
-            />
-          </div> 
           <button className={styles.nextButton} onClick={handleNext}>
             Next
           </button>
@@ -72,57 +62,61 @@ export default function BookingForm({ handleClose, clickedButton }) {
     {currentStep === 2 && (
       
         <form onSubmit={handleSubmit}>
-           <h2>{formData.tickets} Tickets for {clickedButton}</h2>
-          <button type="button" className={styles.modal_backButton} onClick={handleBack}>
-          Back
-        </button>
+          <section className={styles.grey_top}>
+            <button type="button" className={styles.modal_backButton} onClick={handleBack}>Tilbage</button> 
+          </section>
+          <div className={styles.form_container}>
+            <h2>{formData.tickets} Reservation til {clickedButton}</h2>
         
-          <div className={styles.formGroup}>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="For- og efternavn"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </div>
+    
+            <div className={styles.formGroup}>
+              <p>Dine kontaktoplysninger</p>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="For- og efternavn"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
 
-          <div className={styles.formGroup}>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="E-mail"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
+              <div className={styles.formGroup}>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="E-mail"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
 
-          <div className={styles.formGroup}>
-            <input
-              type="phone"
-              id="phone"
-              name="phone"
-              placeholder="Mobil nr"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-            />
-          </div>
+              <div className={styles.formGroup}>
+                <input
+                  type="phone"
+                  id="phone"
+                  name="phone"
+                  placeholder="Mobil nr"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
 
-          <div className={styles.formGroup}>
-            <input
-              type="text"
-              id="card"
-              name="card"
-              placeholder="Card Details"
-              value={formData.card}
-              onChange={handleChange}
-              required
-            />
+              <div className={styles.formGroup}>
+                <input
+                  type="text"
+                  id="card"
+                  name="card"
+                  placeholder="Card Details"
+                  value={formData.card}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
           </div>
           <button className={styles.nextButton} onClick={handleNext}>
             Next
@@ -133,21 +127,26 @@ export default function BookingForm({ handleClose, clickedButton }) {
 
       {currentStep === 3 && (
         <form onSubmit={handleSubmit}>
-          <h2>Tickets for {clickedButton}</h2>
-          <p>{formData.tickets} gæster</p>
-          <p>Navn på reservation: {formData.name}</p>
-          <p> Den: {formData.eventDate}</p>
           <button type="button" className={styles.modal_backButton} onClick={handleBack}>
-          Back
-        </button>
-        <button type="submit" onClick={handleNext}>Book Now</button>
+            Tilbage
+          </button>
+         <div className={styles.form_container}>
+            <h2>Reservation til {clickedButton}</h2>
+            <p>{formData.tickets} gæster</p>
+            <p>Navn på reservation: {formData.name}</p>
+            </div>
+          <button type="submit" className={styles.nextButton} onClick={handleNext}>Book Now</button>
         </form>
       )}
 
 
 {currentStep === 4 && (
         <div>
-          <h1>Thanks for your booking</h1>
+          <h1>Din reservation er beskræftet</h1>
+          <p>og en booking bekræftigelse er sendt til: {formData.email}</p>
+          <button type="button" className={styles.nextButton} onClick={handleClose}>
+            Exit
+          </button>
         </div> 
          
       )}

@@ -7,21 +7,61 @@
     margin-block-start: 0px;
   }
 
-  :root {
+:root {
     --H1: clamp(6rem, 0.7857rem + 7.3143vw, 2.7rem);
     --H2: 4rem;
-    --H3: 2rem;
+    --H3: clamp(30px, 2.19459vw, 42px);
+    --H4: clamp(16px, 1.1704462326261889vw, 18px);
+    --p: 1rem;
 
-    --primary-text-color: #000000;
+    --primary-text-color:rgb(34, 34, 34);
     --secondary-text-color: #e74c3c;
-  
-    --main-font:font-family: 'DM Sans', sans-serif;
-    --heading-font: font-family: 'DM Sans', sans-serif;
-  }
+
+    --regular-weight: font-weight:400px;
+    --semibold-weight: font-weight:700px;
+
+    --heading-font: font-family:  "DM Sans", Helvetica, Arial, sans-serif;
+    --main-font:font-family:  "DM Sans", Helvetica, Arial, sans-serif;
+}
   
 h1{
-  font-family: var(--heading-font);
+  font-family: "DM Sans", Helvetica, Arial, sans-serif;
   color: var(--primary-text-color);
-  font-weight: 300;
+  font-weight: var(--semibold-weight);
 }
+
+h2{
+font-family: "DM Sans", Helvetica, Arial, sans-serif;
+font-weight: var(--regular-weight);
+font-size: var(--H2);
+}
+
+h3{
+  font-family: "DM Sans", Helvetica, Arial, sans-serif;
+  line-height: 1.1;
+  font-size: var(--H3);
+}
+
+h4{
+  font-family: "DM Sans", Helvetica, Arial, sans-serif;
+  font-size: var(--H4);
+
+}
+p{
+  font-family: "DM Sans", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: var(--p);
+}
+
+a{
+  font-family: "DM Sans", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: var(--p);
+}
+
+a:hover {
+  text-decoration: underline;
+  }
+
+
 

@@ -25,7 +25,6 @@
   margin-top: 1rem;
 }
 
- 
 /* scroll section upcoming events */
 .upcoming_event_section{
   display: block; /* Display upcoming events in a row */
@@ -36,89 +35,158 @@
   margin-left: 15%;
   position: relative;
 }
-.upcoming_event_img {
-  width: 400px;
-  position: relative;
-  margin-top: 10%;
+
+.upcoming_event_card img{
+  width: 350px;
 }
+.upcoming_event_card p{
+ margin-top: -5px;
+}
+
 .upcoming_event_card h3 {
-  font-size: 3rem;
   position: absolute;
   top: 3%;
   left: 0;
   z-index: 1;
 }
 
+/*BUTTON HOVER EFFEKT*/
+.button1, .button2, .button3 {
+  position: relative;
+  background-color: #fff; /* Initial background color */
+  color: #333;
+  padding: 10px 20px;
+  border: 1px solid black;
+  overflow: hidden; /* Ensure overflow is hidden to contain the fill effect */
+  transition: background-color 0.8s ease, color 0.8s ease; /* Add color transition */
+}
+
+.button1::before, .button2::before {
+  content: "";
+  position: absolute;
+  top: 0; /* Start from the top */
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #000; /* Fill color */
+  z-index: -1; /* Move the fill below the text */
+  transition: height 0.8s ease, background-color 0.8s ease; /* Add background-color transition */
+}
+
+/* Hover effect - Black background rolls from top to bottom */
+.button1:hover::before, .button2:hover::before {
+  height: 100%; /* Increase height to 100% on hover */
+  z-index: -1; /* Ensure the fill stays behind the text on hover */
+}
+
+.button1:hover, .button2:hover {
+  color: #fff; /* Change text color to white on hover */
+  z-index: 1; /* Ensure the text stays above the fill on hover */
+}
+
+/* Remove effect transition - White background rolls from bottom to top */
+.button1::before,
+.button1, .button2::before,
+.button2 {
+  transition: height 0.8s ease, background-color 0.8s ease; /* Add transition for normal state */
+}
+
+/* Add transition for white background on mouseleave */
+.button1:not(:hover)::before, .button2:not(:hover)::before{
+  height: 0; 
+}
+
+
  
 
 /*MODAL BOOKING-FORM*/
 .modal {
-  background-color: rgb(246, 243, 243);
-  border: solid 4px black;
+  background-color: rgb(234, 229, 229);
   position: fixed;
-  top: 15%;
-  left: 18%;
-  width: 60rem;
-  height: 35rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  place-content: center;
   z-index: 1000;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  overflow-y: hidden;
 }
-.formGroup {
+
+.formGroup, .formGroup_1 {
+  text-align: left;
   position: relative;
   margin-bottom: 16px;
 }
-.formGroup input {
+.formGroup_1 input {
   width: 100%;
-  padding: 8px;
+  padding: 25px;
   border: 1px solid #ccc;
-  border-radius: 4px;
 }
+
+.formGroup input {
+  padding-block: 25px;
+  padding-right: 360px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
 .formGroup label {
-  position: absolute;
-  top: 8px;
-  left: 8px;
+  position: relative;
   color: #777;
   pointer-events: none;
   transition: 0.3s ease-out;
+  text-align: left;
+  place-content: left;
 }
 .modal h2 {
   color: #4a4949;
-  font-size: 4rem;
-  position: absolute; /* Add this line */
-  top: 10px; /* Adjust the top position as needed */
-  left: 20%;
-  margin-bottom: 20px;
+  font-size: 2rem;
 }
-.modal button {
-  background-color: #f2eeee;
+
+.nextButton {
+  background-color: #0e0e0e;
+  color: #ffffff;
+  padding: 10px 120px;
+  border: none;
+}
+
+.modal_closeButton {
+  background-color: rgb(246, 243, 243);
   color: #000000;
   padding: 10px 20px;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
-}
-.modal_closeButton {
   position: absolute;
-  top: 20px;
-  right: 14px;
+  top: 25px;
+  right: 3%;
 }
 .modal_backButton{
+  background-color: rgb(246, 243, 243);
+  color: #000000;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
   position: absolute;
-  top: 20px;
-  left: 14px;
+  top: 25px;
+  left: 3%;
 }
 
+
+
+/*PREVIOUS EVENTS_ GALLERI SECTION*/
 .galleri_overskrift{
   margin-top: 10px;
   font-size: 2rem;
   margin-left: 14%;
 }
-
-/*PREVIOUS EVENTS_ GALLERI SECTION*/
-.row_container img,
-.row_container video {
+.galleri_holder{
+  margin-left: 36%;
+}
+.galleri_holder img,
+.galleri_holder video {
   width: 300px;
   margin: 10px;
   vertical-align: top;
@@ -131,40 +199,26 @@
 .row_1{
   display: block;
   margin-top: 0;
-  padding-block-start: 10px;
 }
-.row_2, .row_3, .row_4 {
-  display: block;
-  margin-top: 20px;
-}
-
-/*RÆKKE 1*/
-.row_1{
-  background-color: rgb(255, 255, 255);
-  }
-/*RÆKKE 2*/
-.row_2{
-background-color: black;
-}
-
-/*RÆKKE 3*/
-.row_3{
-  background-color: rgb(152, 141, 141);
-  }
-
-/*RÆKKE 4*/
-.row_4{
-  background-color: rgb(249, 248, 248);
-  }
-
-
-
 
 @media (min-width: 750px) {
+  .galleri_holder{
+    margin-left: 18%;
+  }
+  .galleri_holder img,
+  .galleri_holder video {
+    width: 600px;
+    margin: 10px;
+    vertical-align: top;
+  }
+
+}
+
+
+@media (min-width: 1100px) {
   .menuBar_container{
     margin-left: 7%;
   }
- 
   .main_content {
     flex: 15;
     overflow-y: auto;
@@ -180,7 +234,11 @@ background-color: black;
   /* container med up-coming og previous galleri  */
   .events_container{
     overflow-x: auto; 
-    margin-left: 4%;
+    margin-left: 5%;
+  }
+
+  .events_container h2{
+    margin-left: 3%;
   }
 
   .row_container{
@@ -196,11 +254,11 @@ background-color: black;
 
   .upcoming_event_card {
     margin-right: 15px;
-    margin-left: 30px;
+    margin-left: 2.5%;
     position: relative;
   }
   .upcoming_event_img {
-    width: 600px;
+    width: 500px;
     position: relative;
     margin-top: 10%;
   }
@@ -214,49 +272,97 @@ background-color: black;
 
 
 
+/*TIDLIGERE EVETNST GALLERI*/
   .galleri_overskrift{
-    margin-top: 50px;
-    font-size: 5rem;
-    margin-left: 3px;
+    margin-top: 12%;
+    margin-left: 8%;
+    font-size: var(--H2);
+  }
+  .galleri_holder{
+    margin-left: 0%;
+  }
+
+  .galleri_holder p {
+    padding-right: 24%;
+    margin-top: 5px;
+    margin-left: 8px
+  }
+
+  .galleri_holder h4{
+    margin-left: 8px
   }
 
 
-.row_1{
-  display: block;
+.row_1,.row_2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   margin-top: 0;
   padding-block-start: 10px;
   padding-bottom: 85px;
+  margin-left: 8%;
+}
+.row_3{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 0;
+  padding-block-start: 10px;
+  padding-bottom: 85px;
+  margin-left: 8%;
+}
+.row_4 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 0;
+  padding-block-start: 10px;
+  padding-bottom: 85px;
+  margin-left: 8%;
 }
 
-.row_2, .row_3, .row_4 {
-  display: block;
-  margin-top: 10%;
-  padding-block: 85px;
+
+/*RÆKKE 1 STYLING*/
+.row_1 img {
+  width: 350px;
+}
+.row_1_col_2{
+  margin-left: -40%;
+}
+.row_1 video{
+  width: 350px;
 }
 
-
-.row_container img,
-.row_container video {
-  width: 240px;
-  margin: 10px;
-  vertical-align: top;
-  transition: transform 0.3s ease-in-out, z-index 0.3s ease-in-out;
-  position: relative; /* Add position property */
+/*RÆKKE 2 STYLING*/
+.row_2_col_1 img {
+  width: 550px;
+}
+.row_2_col_2 video {
+  width: 300px;
+}
+.row_2_col_2{
+  margin-left: 40%;
 }
 
-.row_container img:hover,
-.row_container video:hover {
-  transform: scale(1.5);
-  z-index: 1;
+/*RÆKKE 3 STYLING*/
+.row_3 img{
+  width: 230px;
+  height: 300px;
+  object-fit: cover;
+ 
 }
 
-.row_container video:hover {
-  z-index: 100; /* Set a higher z-index for the video */
+/*RÆKKE 4 STYLING*/
+.row_4 img{
+  width: 250px;
 }
-
-/*h3 overksift - på hvert event*/
-.galleri_holder h3{
-  margin-left: 60px;
+.row_4 video{
+  width: 350px;
+ 
+}
+.row_4_col_1{
+  margin-left: 40%;
+  margin-top: 58%;
+}
+.row_4{
+  margin-left: 30%;
 }
 }
 
