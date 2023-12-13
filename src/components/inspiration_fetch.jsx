@@ -3,6 +3,7 @@ import styles from "@/styles/inspiration.module.css";
 import Recipe_modal from './recipe_modal';
 import BurgerMenu from "@/components/burgerMenu";
 import MenuBar from './menuBar';
+import { Helmet } from 'react-helmet';
 
 export default function Inspiration_fetch (){
   const [artists, setArtist] = useState([]);
@@ -39,6 +40,10 @@ export default function Inspiration_fetch (){
 
   return (
     <>
+    <Helmet>
+        <title>Table Stories</title>
+        <meta name="inspiration til borddækning med service" content="inspiration til borddækning, pynt, fest, interiør" />
+      </Helmet>
       <section className={styles.recipes_container}>
         <article className={styles.menu_container}>
           <BurgerMenu />
@@ -46,7 +51,7 @@ export default function Inspiration_fetch (){
 
         <article className={styles.content_container}>
             <MenuBar></MenuBar>
-            <h2>Style Stories</h2>
+            <h2>Table Stories</h2>
           <section className={styles.grid}>
   {artists.map((artist, index) => (
     <div

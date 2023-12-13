@@ -3,6 +3,7 @@ import styles from "@/styles/opskrifter.module.css";
 import Recipe_modal from './recipe_modal';
 import BurgerMenu from "@/components/burgerMenu";
 import MenuBar from './menuBar';
+import { Helmet } from 'react-helmet';
 
 export default function Opskrifter_fetch (){
   const [opskrift, setOpskrift] = useState([]);
@@ -49,6 +50,10 @@ export default function Opskrifter_fetch (){
   
   return (
     <>
+    <Helmet>
+        <title>Opskrifter</title>
+        <meta name="opskrifter på retter til gæster" content="opskrifter på aftensmad, drinks, dessert og morgenmad vist på service fra Kahler" />
+      </Helmet>
       <section className={styles.recipes_container}>
         <article className={styles.menu_container}>
           <BurgerMenu />

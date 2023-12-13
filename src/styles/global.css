@@ -1,6 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,600&family=Poppins:wght@300;500&display=swap');
 * {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
@@ -9,42 +7,41 @@
 
 :root {
     --H1: clamp(6rem, 0.7857rem + 7.3143vw, 2.7rem);
-    --H2: 4rem;
-    --H3: clamp(30px, 2.19459vw, 42px);
-    --H4: clamp(16px, 1.1704462326261889vw, 18px);
+    --H2: 3.5rem;
+    --H3: 1.4rem;
+    --H4: 1.2rem;
     --p: 1rem;
 
     --primary-text-color:rgb(34, 34, 34);
     --secondary-text-color: #e74c3c;
 
-    --regular-weight: font-weight:400px;
-    --semibold-weight: font-weight:700px;
 
     --heading-font: font-family:  "DM Sans", Helvetica, Arial, sans-serif;
     --main-font:font-family:  "DM Sans", Helvetica, Arial, sans-serif;
 }
   
 h1{
-  font-family: "DM Sans", Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: var(--primary-text-color);
-  font-weight: var(--semibold-weight);
 }
 
 h2{
-font-family: "DM Sans", Helvetica, Arial, sans-serif;
-font-weight: var(--regular-weight);
+font-family: 'Poppins', sans-serif;
+font-weight:300;
 font-size: var(--H2);
 }
 
 h3{
-  font-family: "DM Sans", Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   line-height: 1.1;
   font-size: var(--H3);
+  font-weight:500;
 }
 
 h4{
-  font-family: "DM Sans", Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: var(--H4);
+  font-weight:500;
 
 }
 p{

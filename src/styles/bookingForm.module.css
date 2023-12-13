@@ -15,6 +15,11 @@
     position: relative;
     margin-bottom: 16px;
   }
+
+  .formGroup_1{
+    width: 40%;
+  }
+
   .formGroup input {
     width: 100%;
     padding: 8px;

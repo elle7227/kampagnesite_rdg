@@ -3,6 +3,7 @@ import React from 'react';
 import styles from "@/styles/Landing.module.css";
 import { useState, useEffect } from 'react';
 import BookingForm from '@/components/bookingForm';
+import { Helmet } from 'react-helmet';
 
 
 
@@ -38,6 +39,10 @@ export function Upcoming_events(){
 
   return (
     <>
+    <Helmet>
+        <title>Rosendahl Events</title>
+        <meta name="events i københavn" content="kommende events på barer og restauranter i københavn" />
+      </Helmet>
     <article>
             <h2 className={styles.heading}>Kommende events</h2>
         </article>
@@ -48,13 +53,21 @@ export function Upcoming_events(){
     {artists.map((artist) => (
     <div className={styles.upcoming_event_card} key={artist.id}>
     <img src={artist.image} alt={artist.name} />
-    <h4>{artist.name}</h4>
+    <h4 className={styles.h4_upcoming}>{artist.name}</h4>
     <p>{artist.info}</p>
+    <a
+            className={styles.instagram_link}
+            href={artist.instagram_link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Læs mere
+          </a>
     <button
       className={styles.button2}
-      onClick={() => handleButtonClick('button2')}
+      onClick={() => handleButtonClick(artist.name)}
     >
-      link pop up
+      Køb billet
     </button>
   </div>
   ))}

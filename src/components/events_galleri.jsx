@@ -1,43 +1,19 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from "@/styles/Landing.module.css";
 
 export default function Event_galleri() {
-    const videoRefs = useRef([]);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const imageRefs = useRef([]);
 
-    // undersøger om video er i intersection (viewport), på entry afspilles, ellers pauses video. 
     useEffect(() => {
-        function handleIntersection(entries){
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.play();
-                } else {
-                    entry.target.pause();
-                }
-            });
-        }
-    // laver en observer der ser om mere end 0.5 % af video er i viewport
-        const observer = new IntersectionObserver(handleIntersection, {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.5,
-        });
-
-        // observer sættes på hvert video element
-        videoRefs.current.forEach((video) => {
-            observer.observe(video);
-
-            // tilføjer eventlistener der afspiller video ved mouseover
-            video.addEventListener('mouseover', () => {
-                video.play();
-            });
-        });
-
-        // fjerner observer igen, når video ikke er viewport
-        return () => {
-            observer.disconnect();
-        };
-        // vi sætter denne funktion til  at køre hver gang siden renders
-    }, []);
+        const intervalId = setInterval(() => {
+            console.log('Changing image');
+            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageRefs.current.length);
+        }, 2000);
+    
+        return () => clearInterval(intervalId);
+    
+    }, []); 
 
     return(
         <>
@@ -45,10 +21,11 @@ export default function Event_galleri() {
 
         <section className={styles.galleri_holder}>
             <article className={styles.row_1}>
-                <div className={styles.row_1_col_1}>
-                    <img className={styles.event_img} src="tidligere_events/bar_pasta1.jpg"/>  
-                    <p>indsæt tekst omkring hvilket event, sted og dato</p>     
-                </div>
+            <div className={styles.row_1_col_1}>
+                <img className={styles.event_img} src="tidligere_events/bar_pasta1.jpg" ref={(ref) => imageRefs.current.push(ref)} />
+                <img className={styles.event_img} src="tidligere_events/mangia2.jpg" ref={(ref) => imageRefs.current.push(ref)} />
+                <img className={styles.event_img} src="tidligere_events/mangia.jpg" ref={(ref) => imageRefs.current.push(ref)} />                        <p>indsæt tekst omkring hvilket event, sted og dato</p>
+            </div>
 
                 <div className={styles.row_1_col_2}>
                 <img className={styles.event_img} src="tidligere_events/bar_pasta2.jpg"/>  
@@ -65,9 +42,7 @@ export default function Event_galleri() {
                 </div>
 
                 <div className={styles.row_2_col_2}>
-                <video ref={(ref) => videoRefs.current.push(ref)} className={styles.video} autoPlay muted>
-                        <source src="/tidligere_events/piger.mp4" type="video/mp4" />
-                    </video>
+                <img className={styles.event_img} src="tidligere_events/osteria1.jpg"/>   
                     <p>indsæt tekst omkring hvilket event, sted og dato</p>
                 </div> 
 
@@ -97,9 +72,7 @@ export default function Event_galleri() {
                     <p>indsæt tekst omkring hvilket event, sted og dato</p>
                 </div>
                 <div className={styles.row_4_col_2}>
-                    <video ref={(ref) => videoRefs.current.push(ref)} className={styles.video} autoPlay muted>
-                        <source src="/tidligere_events/habibi.mp4" type="video/mp4" />
-                    </video>
+                <img className={styles.event_img} src="tidligere_events/osteria1.jpg"/>   
                     <p>indsæt tekst omkring hvilket event, sted og dato</p>
                 </div>
             </article>

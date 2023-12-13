@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import styles from "@/styles/Landing.module.css";
+import { Helmet } from 'react-helmet';
 
 
 
 export default function BookingForm({ handleClose, clickedButton }) {
   const [currentStep, setCurrentStep] = useState(1);
+  const [formValid, setFormValid] = useState(false);
   const [formData, setFormData] = useState({
     tickets: 1,
     name: '',
@@ -17,9 +19,13 @@ export default function BookingForm({ handleClose, clickedButton }) {
     setCurrentStep(currentStep + 1);
   }
 
-  function handleChange(e){
+  function handleChange(e) {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+  
+    // Validation logic
+    const isFormValid = Object.values(formData).every((val) => val !== '');
+    setFormValid(isFormValid);
   }
 
 
@@ -34,6 +40,11 @@ export default function BookingForm({ handleClose, clickedButton }) {
   }
 
   return (
+    <>
+     <Helmet>
+        <title>{clickedButton}</title>
+        <meta name="pop-up event i københavn" content="pop-up event på restaurant i københavn" />
+      </Helmet>
     <div className={styles.modal}>
       <section className={styles.grey_top}>
         <button className={styles.modal_closeButton} onClick={handleClose}>close</button>
@@ -53,9 +64,12 @@ export default function BookingForm({ handleClose, clickedButton }) {
               required
             />
           </div>
-          <button className={styles.nextButton} onClick={handleNext}>
-            Next
-          </button>
+          <button
+  className={styles.nextButton}
+  onClick={handleNext}
+>
+  Next
+</button>
         </div>
       )}
     
@@ -105,23 +119,50 @@ export default function BookingForm({ handleClose, clickedButton }) {
                   required
                 />
               </div>
-
               <div className={styles.formGroup}>
-                <input
-                  type="text"
-                  id="card"
-                  name="card"
-                  placeholder="Card Details"
-                  value={formData.card}
-                  onChange={handleChange}
-                  required
-                />
+                  <p>Card details</p>
+                  <input
+                    type="text"
+                    id="card"
+                    name="card"
+                    placeholder="Kortnummer"
+                    value={formData.card}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+              <div className={styles.card_details_holder}>
+                <div className={styles.formGroup_card}>
+                  <input
+                    type="text"
+                    id="card"
+                    name="card"
+                    placeholder="Udløbsdato"
+                    value={formData.card}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className={styles.formGroup_card}>
+                  <input
+                    type="text"
+                    id="card"
+                    name="card"
+                    placeholder="CVR"
+                    value={formData.card}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
               </div>
+              <button
+                className={styles.nextButton}
+                onClick={handleNext}
+                disabled={!formValid}
+                >
+                Next
+              </button>
           </div>
-          <button className={styles.nextButton} onClick={handleNext}>
-            Next
-          </button>
-          
         </form>
       )}
 
@@ -131,7 +172,7 @@ export default function BookingForm({ handleClose, clickedButton }) {
             Tilbage
           </button>
          <div className={styles.form_container}>
-            <h2>Reservation til {clickedButton}</h2>
+            <h2>Reservation til <br/> {clickedButton}</h2>
             <p>{formData.tickets} gæster</p>
             <p>Navn på reservation: {formData.name}</p>
             </div>
@@ -144,12 +185,18 @@ export default function BookingForm({ handleClose, clickedButton }) {
         <div>
           <h1>Din reservation er beskræftet</h1>
           <p>og en booking bekræftigelse er sendt til: {formData.email}</p>
-          <button type="button" className={styles.nextButton} onClick={handleClose}>
-            Exit
-          </button>
+          <button
+  type="submit"
+  className={styles.nextButton}
+  onClick={handleNext}
+  disabled={!formValid}
+>
+  Book Now
+</button>
         </div> 
          
       )}
       </div>
+      </>
   )
 }
