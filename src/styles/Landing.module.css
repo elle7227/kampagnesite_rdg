@@ -19,8 +19,8 @@ margin-left: 15%;
 
 
 .heading1_landing img {
-  width: 97%;
-  margin-left: 3%;
+  width: 90%;
+  margin-left: 12%;
   margin-top: -2.5%;
 }
 
@@ -251,6 +251,12 @@ margin-left: 15%;
     margin: 10px;
     vertical-align: top;
   }
+
+.heading1_landing img {
+  width: 96%;
+  margin-left: 4%;
+  margin-top: -2.5%;
+}
 
 }
 

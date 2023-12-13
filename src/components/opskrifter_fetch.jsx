@@ -60,6 +60,9 @@ export default function Opskrifter_fetch (){
         </article>
         <article className={styles.content_container}>
         <MenuBar></MenuBar>
+        <section className={styles.heading1_landing}>
+              <img src="tidligere_events/logoV22.png" alt="Logo" />
+            </section>
           <div className={styles.filter_buttons}>
             <a onClick={handleShowAll}>All</a>
             <a onClick={() => handleFilterClick("dinner")}>Aftensmad</a>

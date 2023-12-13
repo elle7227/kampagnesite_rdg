@@ -1,6 +1,12 @@
 .recipes_container {
     display: flex;
   }
+
+  .heading1_landing img {
+    width: 90%;
+    margin-left: 12%;
+    margin-top: -2.5%;
+  }
   
   .menu_container {
     position: sticky;
@@ -179,6 +185,14 @@
       cursor: pointer;
       position: relative;
       padding-bottom: 5px; /* Add padding to create space for the line */
+    }
+
+    .heading1_landing img {
+      position: relative;
+      width: 100%;
+      margin-left: -2.5%;
+      margin-top: -9%;
+      z-index: -200;
     }
    
     }

@@ -40,7 +40,7 @@ export function Upcoming_events(){
   return (
     <>
     <Helmet>
-        <title>Rosendahl Events</title>
+        <title>Rosendahl Dinners</title>
         <meta name="events i københavn" content="kommende events på barer og restauranter i københavn" />
       </Helmet>
     <article>

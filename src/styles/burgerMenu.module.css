@@ -91,9 +91,7 @@
 .menu_container {
   display: flex;
   align-items: center;
-  border-bottom: solid 1px black;
 }
-
 .menu {
   list-style-type: none;
   margin-right: 3%;
@@ -102,6 +100,7 @@
   overflow: hidden;
   display: flex; /* Add this line to make the menu a flex container */
 }
+
 
 .menu li {
   float: left;
@@ -151,6 +150,15 @@
   .menu_logo {
     width: 1px;
     margin-left: 275%; /* Align the logo to the right within the flex container */
+  }
+  .menu {
+    list-style-type: none;
+    margin-right: 3%;
+    margin-top: 50px;
+    padding: 0;
+    overflow: hidden;
+    display: flex; /* Add this line to make the menu a flex container */
+    margin-bottom: -5%;
   }
 }
 

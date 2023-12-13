@@ -52,7 +52,7 @@ export default function Landing_page() {
               <MenuBar></MenuBar>
             </section>
             <section className={styles.heading1_landing}>
-              <img src="tidligere_events/logo1.png" alt="Logo" />
+              <img src="tidligere_events/logo4.png" alt="Logo" />
             </section>
             <section className={styles.events_container}>
               <Upcoming_events />

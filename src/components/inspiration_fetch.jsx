@@ -51,7 +51,10 @@ export default function Inspiration_fetch (){
 
         <article className={styles.content_container}>
             <MenuBar></MenuBar>
-            <h2>Table Stories</h2>
+            <section className={styles.heading1_landing}>
+              <img src="tidligere_events/logoV2.png" alt="Logo" />
+            </section>
+            <h4>Table Stories</h4>
           <section className={styles.grid}>
   {artists.map((artist, index) => (
     <div
