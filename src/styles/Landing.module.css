@@ -24,6 +24,13 @@ margin-left: 15%;
   margin-top: -2.5%;
 }
 
+.beskrivelse{
+  margin-left: 15%;
+  color: rgb(184, 129, 184);
+}
+
+
+
 /* menu-container*/
 .menu_container {
   position: sticky;
@@ -256,6 +263,15 @@ margin-left: 15%;
   width: 96%;
   margin-left: 4%;
   margin-top: -2.5%;
+}
+
+.beskrivelse {
+  position: relative;
+  margin-left: 7%;
+  color: rgb(184, 129, 184);
+}
+.beskrivelse h4{
+font-size: 2rem;
 }
 
 }
