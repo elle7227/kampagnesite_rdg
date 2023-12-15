@@ -25,8 +25,13 @@ margin-left: 15%;
 }
 
 .beskrivelse{
+  margin-top: 6% ;
   margin-left: 15%;
-  color: rgb(184, 129, 157);
+  color: #D3B8D6;
+}
+.beskrivelse h4{
+  font-size: 0.6rem;
+  margin-bottom: -15%;
 }
 
 
@@ -50,6 +55,7 @@ margin-left: 15%;
   margin-right: 15px;
   margin-left: 21%;
   position: relative;
+  margin-bottom: 10%;
 }
 
 .upcoming_event_card img{
@@ -125,7 +131,7 @@ margin-left: 15%;
 
 /*MODAL BOOKING-FORM*/
 .modal {
-  background-color: rgb(234, 229, 229);
+  background-color:#F7F7F5;
   position: fixed;
   top: 0;
   left: 0;
@@ -180,12 +186,20 @@ margin-left: 15%;
   text-align: left;
   margin-bottom: 10%;
 }
+.checkbox{
+  margin-bottom: 10%;
+  margin-left: 10px;
+}
+.checkbox input{
+  margin-right: 5px;
+}
+
 
 .modal h2 {
   color: #4a4949;
   font-size: 2rem;
   margin-top: 12%;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .form_container{
@@ -197,11 +211,11 @@ margin-left: 15%;
   color: #ffffff;
   padding: 10px 87px;
   border: none;
-  margin-left: 40px;
+  margin-left: 20px;
 }
 
 .modal_closeButton {
-  background-color: rgb(246, 243, 243);
+  background-color: #F7F7F5;
   color: #000000;
   padding: 10px 20px;
   border: none;
@@ -211,7 +225,7 @@ margin-left: 15%;
   right: 3%;
 }
 .modal_backButton{
-  background-color: rgb(246, 243, 243);
+  background-color:#F7F7F5;
   color: #000000;
   padding: 10px 20px;
   border: none;
@@ -219,6 +233,12 @@ margin-left: 15%;
   position: absolute;
   top: 25px;
   left: 3%;
+}
+.form_container p{
+  margin-left: 10px;
+}
+.checkbox{
+  margin-bottom: 10%;
 }
 
 
@@ -268,10 +288,16 @@ margin-left: 15%;
 .beskrivelse {
   position: relative;
   margin-left: 7%;
-  color: rgb(71, 131, 16);
+  color: #D3B8D6;
+  margin-top: 0% ;
 }
 .beskrivelse h4{
 font-size: 2rem;
+font-weight: 300;
+margin-bottom: 0%;
+}
+.upcoming_event_card {
+  margin-bottom: 0%;
 }
 
 }
@@ -423,7 +449,7 @@ font-size: 2rem;
 }
 
 .row_4_col_1{
-  margin-top: 39%;
+  margin-top: 50%;
   margin-left: 32%;
 }
 .row_4_col_1 img{
@@ -465,12 +491,19 @@ font-size: 2rem;
   padding: 10px 120px;
   margin-left: 20px;
 }
+.nextButton_last {
+  padding: 10px 120px;
+  margin-left: 20px;
+}
 .card_details_holder {
   display: flex;
   margin-left: 10px;
 }
 .form_container p{
   margin-left: 10px;
+}
+.checkbox{
+  margin-bottom: 10%;
 }
 }
 

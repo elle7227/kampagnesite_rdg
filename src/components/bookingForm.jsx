@@ -47,11 +47,11 @@ export default function BookingForm({ handleClose, clickedButton }) {
       </Helmet>
     <div className={styles.modal}>
       <section className={styles.grey_top}>
-        <button className={styles.modal_closeButton} onClick={handleClose}>close</button>
+        <button className={styles.modal_closeButton} onClick={handleClose}>X</button>
       </section>
     {currentStep === 1 && (
         <div className={styles.form_container}>
-          <h2>Reservation til{clickedButton}</h2>
+          <h2>Reservation til {clickedButton}</h2>
           <div className={styles.formGroup_1}>
             <p>Antal gæster</p>
             <input
@@ -135,10 +135,10 @@ export default function BookingForm({ handleClose, clickedButton }) {
                 <div className={styles.formGroup_card}>
                   <input
                     type="text"
-                    id="card"
-                    name="card"
+                    id="card1"
+                    name="card1"
                     placeholder="Udløbsdato"
-                    value={formData.card}
+                    value={formData.card1}
                     onChange={handleChange}
                     required
                   />
@@ -146,10 +146,10 @@ export default function BookingForm({ handleClose, clickedButton }) {
                 <div className={styles.formGroup_card}>
                   <input
                     type="text"
-                    id="card"
-                    name="card"
+                    id="card2"
+                    name="card2"
                     placeholder="CVR"
-                    value={formData.card}
+                    value={formData.card3}
                     onChange={handleChange}
                     required
                   />
@@ -175,6 +175,17 @@ export default function BookingForm({ handleClose, clickedButton }) {
             <h2>Reservation til <br/> {clickedButton}</h2>
             <p>{formData.tickets} gæster</p>
             <p>Navn på reservation: {formData.name}</p>
+            <div className={styles.checkbox}>
+            <label >
+      <input 
+        type="checkbox"
+        id="confirmationCheckbox"
+        name="confirmationCheckbox"
+        required
+      />
+       Rosendahl må gerne anvende mine billeder med tag <br></br> #rosendahlDinners.
+    </label>
+    </div>
             </div>
           <button type="submit" className={styles.nextButton} onClick={handleNext}>Book Now</button>
         </form>

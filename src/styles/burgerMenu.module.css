@@ -132,7 +132,7 @@
 .all_button {
   position: relative;
   background-color: white;
-  border: 2px solid black;
+  border: 1px solid black;
   color: black;
   padding: 10px 20px;
   text-align: center;
@@ -141,6 +141,44 @@
   font-size: 16px;
   margin: 10px;
   cursor: pointer;
+  overflow: hidden; /* Ensure overflow is hidden to contain the fill effect */
+  transition: background-color 0.8s ease, color 0.8s ease; /* Add color transition */
+}
+
+/*BUTTON HOVER EFFEKT*/
+
+.all_button::before {
+  content: "";
+  position: absolute;
+  top: 0; /* Start from the top */
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #000; /* Fill color */
+  z-index: -1; /* Move the fill below the text */
+  transition: height 0.8s ease, background-color 0.8s ease; /* Add background-color transition */
+}
+
+/* Hover effect - Black background rolls from top to bottom */
+.all_button:hover::before {
+  height: 100%; /* Increase height to 100% on hover */
+  z-index: -1; /* Ensure the fill stays behind the text on hover */
+}
+
+.all_button:hover {
+  color: #fff; /* Change text color to white on hover */
+  z-index: 1; /* Ensure the text stays above the fill on hover */
+}
+
+/* Remove effect transition - White background rolls from bottom to top */
+.all_button::before,
+.all_button {
+  transition: height 0.8s ease, background-color 0.8s ease; /* Add transition for normal state */
+}
+
+/* Add transition for white background on mouseleave */
+.all_button:not(:hover)::before{
+  height: 0; 
 }
 
 @media (max-width: 1100px) {

@@ -23,25 +23,24 @@ export default function Event_galleri() {
             <article className={styles.row_1}>
             <div className={styles.row_1_col_1}>
                 <img className={styles.event_img} src="tidligere_events/bar_pasta1.jpg" ref={(ref) => imageRefs.current.push(ref)} />
-                                   <p>indsæt tekst omkring hvilket event, sted og dato</p>
+                                   <p>12.04.23 ROSENDAHL X FRIHEDEN</p>
             </div>
 
                 <div className={styles.row_1_col_2}>
                 <img className={styles.event_img} src="tidligere_events/bar_pasta2.jpg"/>  
-                    <p>indsæt tekst omkring hvilket event, sted og dato</p>
+                    <p>12.04.23 ROSENDAHL X FRIHEDEN</p>
                 </div>
             </article>
 
             <article className={styles.row_2}>
                 <div className={styles.row_2_col_1}>
                 <img className={styles.event_img} src="tidligere_events/osteria1.jpg"/>   
-                    <h4>navn på event</h4>
-                    <p>indsæt tekst omkring hvilket event, sted og dato</p>    
+                    <p>23.09.23 ROSENDAHL X OSTERIA SEAFOOD</p>    
                 </div>
 
                 <div className={styles.row_2_col_2}>
                 <img className={styles.event_img} src="tidligere_events/mig.JPG"/>   
-                    <p>indsæt tekst omkring hvilket event, sted og dato</p>
+                    <p>16.05.23 ROSENDAHL X PIOLA CPH</p>
                 </div> 
 
             </article>
@@ -49,41 +48,41 @@ export default function Event_galleri() {
             <article className={styles.row_3}>
                 <div className={styles.row_3_col_1}>
                 <img className={styles.event_img} src="tidligere_events/mangia3.jpg"/>  
-                    <p>indsæt tekst omkring hvilket event, sted og dato</p>     
+                    <p>19.02.23 ROSENDAHL X BRUUS</p>     
                 </div>
                 
                 <div className={styles.row_3_col_2}>
                     <img className={styles.event_img} src="tidligere_events/mangia2.jpg"/>  
-                    <p>indsæt tekst omkring hvilket event, sted og dato</p>
+                    <p>19.02.23 ROSENDAHL X BRUUS</p>
                 </div>
 
                 <div className={styles.row_3_col_3}>
                     <img className={styles.event_img} src="tidligere_events/mangia.jpg"/> 
-                    <p>indsæt tekst omkring hvilket event, sted og dato</p>
+                    <p>19.02.23 ROSENDAHL X BRUUS</p>
                 </div> 
                 
             </article>
 
             <article className={styles.row_4}>
                 <div className={styles.row_4_col_1}>
-                    <img className={styles.event_img} src="tidligere_events/nulle.jpeg"/> 
-                    <p>indsæt tekst omkring hvilket event, sted og dato</p>
+                    <img className={styles.event_img} src="tidligere_events/nulle.jpg"/> 
+                    <p>04.02.23 ROSENDAHL X PASTIS</p>
                 </div>
                 <div className={styles.row_4_col_2}>
-                <img className={styles.event_img} src="tidligere_events/pastis.JPEG"/>   
-                    <p>indsæt tekst omkring hvilket event, sted og dato</p>
+                <img className={styles.event_img} src="tidligere_events/pastis.jpg"/>   
+                    <p>04.02.23 ROSENDAHL X PASTIS</p>
                 </div>
             </article>
 
             <article className={styles.row_1}>
             <div className={styles.row_1_col_1}>
-                <img className={styles.event_img} src="tidligere_events/bar_pasta1.jpg" ref={(ref) => imageRefs.current.push(ref)} />
-                                   <p>indsæt tekst omkring hvilket event, sted og dato</p>
+                <img className={styles.event_img} src="tidligere_events/auto.jpg" ref={(ref) => imageRefs.current.push(ref)} />
+                                   <p>24.06.23 ROSENDAHL X AUTOPOL</p>
             </div>
 
                 <div className={styles.row_1_col_2}>
-                <img className={styles.event_img} src="tidligere_events/vegetar.jpeg"/>  
-                    <p>indsæt tekst omkring hvilket event, sted og dato</p>
+                <img className={styles.event_img} src="tidligere_events/vegetar.jpg"/>  
+                    <p>16.09.23 ROSENDAHL X COMPANII</p>
                 </div>
             </article>
         </section>

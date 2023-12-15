@@ -54,7 +54,7 @@ export default function Inspiration_fetch (){
             <section className={styles.heading1_landing}>
               <img src="tidligere_events/logoV2.png" alt="Logo" />
             </section>
-            <h3>En samling af jeres øjeblikke med med vores produkter </h3>
+            <h3 className={styles.beskrivelse}>En samling af jeres øjeblikke med med vores produkter </h3>
           <section className={styles.grid}>
   {artists.map((artist, index) => (
     <div
@@ -71,7 +71,7 @@ export default function Inspiration_fetch (){
             target="_blank"
             rel="noopener noreferrer"
           >
-            Buy now
+            Køb produkt
           </a>
           <a
             className={styles.link2}
@@ -79,7 +79,7 @@ export default function Inspiration_fetch (){
             target="_blank"
             rel="noopener noreferrer"
           >
-            Buy now
+            Køb produkt
           </a>
           <a
             className={styles.link}
@@ -87,7 +87,7 @@ export default function Inspiration_fetch (){
             target="_blank"
             rel="noopener noreferrer"
           >
-            Shop
+            Køb produkt
           </a>
         </div>
       </article>

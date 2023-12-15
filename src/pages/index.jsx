@@ -22,7 +22,7 @@ export default function Landing_page() {
 
   useEffect(() => {
     // Effect to type out the text gradually
-    const textToType = "Skab minder. Udforsk restauranter. Mød mennesker. Spis uforglemmelig mad";
+    const textToType = "Skab minder. Udforsk restauranter. Mød nye mennesker. Spis uforglemmelig mad";
     let index = 0;
 
     const typingInterval = setInterval(() => {
