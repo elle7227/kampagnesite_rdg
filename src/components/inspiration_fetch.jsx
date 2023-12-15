@@ -54,7 +54,7 @@ export default function Inspiration_fetch (){
             <section className={styles.heading1_landing}>
               <img src="tidligere_events/logoV2.png" alt="Logo" />
             </section>
-            <h4>Table Stories</h4>
+            <h3>En samling af jeres øjeblikke med med vores produkter </h3>
           <section className={styles.grid}>
   {artists.map((artist, index) => (
     <div

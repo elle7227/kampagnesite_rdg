@@ -23,15 +23,13 @@ export default function Event_galleri() {
             <article className={styles.row_1}>
             <div className={styles.row_1_col_1}>
                 <img className={styles.event_img} src="tidligere_events/bar_pasta1.jpg" ref={(ref) => imageRefs.current.push(ref)} />
-                <img className={styles.event_img} src="tidligere_events/mangia2.jpg" ref={(ref) => imageRefs.current.push(ref)} />
-                <img className={styles.event_img} src="tidligere_events/mangia.jpg" ref={(ref) => imageRefs.current.push(ref)} />                        <p>indsæt tekst omkring hvilket event, sted og dato</p>
+                                   <p>indsæt tekst omkring hvilket event, sted og dato</p>
             </div>
 
                 <div className={styles.row_1_col_2}>
                 <img className={styles.event_img} src="tidligere_events/bar_pasta2.jpg"/>  
                     <p>indsæt tekst omkring hvilket event, sted og dato</p>
                 </div>
-
             </article>
 
             <article className={styles.row_2}>
@@ -42,7 +40,7 @@ export default function Event_galleri() {
                 </div>
 
                 <div className={styles.row_2_col_2}>
-                <img className={styles.event_img} src="tidligere_events/osteria1.jpg"/>   
+                <img className={styles.event_img} src="tidligere_events/mig.JPG"/>   
                     <p>indsæt tekst omkring hvilket event, sted og dato</p>
                 </div> 
 
@@ -68,11 +66,23 @@ export default function Event_galleri() {
 
             <article className={styles.row_4}>
                 <div className={styles.row_4_col_1}>
-                    <img className={styles.event_img} src="tidligere_events/habibi.jpg"/> 
+                    <img className={styles.event_img} src="tidligere_events/nulle.jpeg"/> 
                     <p>indsæt tekst omkring hvilket event, sted og dato</p>
                 </div>
                 <div className={styles.row_4_col_2}>
-                <img className={styles.event_img} src="tidligere_events/osteria1.jpg"/>   
+                <img className={styles.event_img} src="tidligere_events/pastis.JPEG"/>   
+                    <p>indsæt tekst omkring hvilket event, sted og dato</p>
+                </div>
+            </article>
+
+            <article className={styles.row_1}>
+            <div className={styles.row_1_col_1}>
+                <img className={styles.event_img} src="tidligere_events/bar_pasta1.jpg" ref={(ref) => imageRefs.current.push(ref)} />
+                                   <p>indsæt tekst omkring hvilket event, sted og dato</p>
+            </div>
+
+                <div className={styles.row_1_col_2}>
+                <img className={styles.event_img} src="tidligere_events/vegetar.jpeg"/>  
                     <p>indsæt tekst omkring hvilket event, sted og dato</p>
                 </div>
             </article>
